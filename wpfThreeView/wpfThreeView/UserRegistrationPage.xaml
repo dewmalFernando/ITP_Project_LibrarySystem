@@ -1,0 +1,186 @@
+﻿<Page x:Class="wpfThreeView.UserRegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:wpfThreeView"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserRegistrationPage">
+
+    <Grid>
+        <ScrollViewer Margin="0,0,0,-23">
+            <Grid Background="White" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Column="0" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            Margin="-80 -50 0 0">
+                    <TextBlock  
+                    HorizontalAlignment="Left" 
+                        Height="41" 
+                        Margin="80,30,0,0" 
+                        Text="Registration" 
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="134" 
+                        FontSize="24" 
+                        Foreground="#FF2B2929"/>
+
+                    <TextBlock HorizontalAlignment="Left"
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="First Name :"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="105"/>
+
+                    <TextBlock  HorizontalAlignment="Left" 
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="Last Name :"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="107"/>
+
+                    <TextBlock  HorizontalAlignment="Left" 
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="Age :"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="107"/>
+
+                    <TextBlock  HorizontalAlignment="Left" 
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="Gender :"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="107"/>
+
+                    <TextBlock HorizontalAlignment="Left" 
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="User Type :"
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="107"/>
+
+                    <TextBlock  HorizontalAlignment="Left" 
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="Phone Number :" 
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top"
+                        Width="105"/>
+
+                    <TextBlock  HorizontalAlignment="Left" 
+                        Height="32" 
+                        Margin="150,20,0,0" 
+                        Text="E-Mail :" 
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        Width="105"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            Margin="-100 0 0 0">
+                    
+                    <TextBox  Name="FirstNameTextBox" 
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,90,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top" 
+                     Width="295" />
+
+                    <TextBox  Name="LasttNameTextBox"  
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,20,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top" 
+                     Width="295" />
+
+                    <TextBox  Name="AgeTextBox"  
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,20,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top" 
+                     Width="295" />
+
+                    <ComboBox  Name="GenderComboBox"  
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,20,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top" 
+                     Width="295" >
+                        <ComboBoxItem Name="Male" 
+                                      Content="Male"/>
+                        <ComboBoxItem Name="Female" 
+                                      Content="Male"/>
+                    </ComboBox>
+
+                    <ComboBox  Name="UserTypeComboBox"  
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,20,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top" 
+                     Width="295" >
+                        <ComboBoxItem Name="TypeStudent" 
+                                      Content="Student"/>
+                        <ComboBoxItem Name="TypeLecturer" 
+                                      Content="Lecturer"/>
+                        <ComboBoxItem Name="TypeProf" 
+                                      Content="Prof"/>
+                    </ComboBox>
+                    
+                    <TextBox  Name="PhoneTextBox" 
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,20,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top" 
+                     Width="295" />
+
+                    <TextBox  Name="MailTextBox"  
+                     HorizontalAlignment="Left" 
+                     Height="32" 
+                     Margin="30,20,0,0" 
+                     Text="" 
+                     VerticalAlignment="Top"
+                     Width="295" />
+
+                    <Button  Name="RegistrationConfirmButton" 
+                    Content="Confirm" 
+                    HorizontalAlignment="Left" 
+                    Height="34" 
+                    Margin="30,20,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="126" 
+                    Click="RegistrationConfirmButton_Click"/>
+
+                    <Button  Name="RegistrationCancelButton" 
+                    Content="Cancel" 
+                    HorizontalAlignment="Left" 
+                    Height="34" 
+                    Margin="200,-34,0,10" 
+                    VerticalAlignment="Top" 
+                    Width="126" 
+                    Click="RegistrationCancelButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

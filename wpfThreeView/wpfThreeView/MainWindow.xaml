@@ -1,0 +1,32 @@
+﻿<Window x:Class="wpfThreeView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfThreeView"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid >
+        
+       
+        <StackPanel>
+            <Button Name="goToLoginButton" Content="Go To Login" Click="GoToLoginButton_Click"/>
+            <Button Name="goToRegisterButton" Content="Go To Register" Click="GoToRegisterButton_Click"/>
+            <Button Name="goToAdminPage" Content="Go To Admin Page" Click="GoToAdminPage_Click"/>
+            <Button Name="goToUserRegistration" Content="Go To User Registraion Page" Click="GoToUserRegistration_Click"/>
+            <Button Name="goToCatalogue" Content="Go To Catalogue Page" Click="GoToCatalogue_Click"/>
+            <Button Name="goToBook" Content="Go To Book Page" Click="GoToBook_Click"/>
+        </StackPanel>
+        
+        <Frame Name="mainFrame" >
+                
+            </Frame>
+
+        </Grid>
+    
+    
+        
+   
+</Window>
