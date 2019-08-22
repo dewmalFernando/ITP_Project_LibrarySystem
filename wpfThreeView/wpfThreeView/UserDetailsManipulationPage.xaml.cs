@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpfThreeView.DBTables;
 
 namespace wpfThreeView
 {
@@ -20,6 +21,8 @@ namespace wpfThreeView
     /// </summary>
     public partial class UserDetailsManipulationPage : Page
     {
+        
+
         public UserDetailsManipulationPage()
         {
             InitializeComponent();

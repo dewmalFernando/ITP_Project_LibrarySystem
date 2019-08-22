@@ -22,6 +22,7 @@ namespace wpfThreeView.DBTables
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibraryManagementSystem")]
 	public partial class DB_FinesTableDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace wpfThreeView.DBTables
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTable_Fine(Table_Fine instance);
+    partial void UpdateTable_Fine(Table_Fine instance);
+    partial void DeleteTable_Fine(Table_Fine instance);
     #endregion
+		
+		public DB_FinesTableDataContext() : 
+				base(global::wpfThreeView.Properties.Settings.Default.LibraryManagementSystemConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DB_FinesTableDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,124 @@ namespace wpfThreeView.DBTables
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Table_Fine> Table_Fines
+		{
+			get
+			{
+				return this.GetTable<Table_Fine>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Fines")]
+	public partial class Table_Fine : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Number;
+		
+		private string _Member_ID;
+		
+		private System.Nullable<float> _Amount;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNumberChanging(int value);
+    partial void OnNumberChanged();
+    partial void OnMember_IDChanging(string value);
+    partial void OnMember_IDChanged();
+    partial void OnAmountChanging(System.Nullable<float> value);
+    partial void OnAmountChanged();
+    #endregion
+		
+		public Table_Fine()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Number", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Number
+		{
+			get
+			{
+				return this._Number;
+			}
+			set
+			{
+				if ((this._Number != value))
+				{
+					this.OnNumberChanging(value);
+					this.SendPropertyChanging();
+					this._Number = value;
+					this.SendPropertyChanged("Number");
+					this.OnNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", DbType="Char(5)")]
+		public string Member_ID
+		{
+			get
+			{
+				return this._Member_ID;
+			}
+			set
+			{
+				if ((this._Member_ID != value))
+				{
+					this.OnMember_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Member_ID = value;
+					this.SendPropertyChanged("Member_ID");
+					this.OnMember_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Real")]
+		public System.Nullable<float> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

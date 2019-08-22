@@ -9,8 +9,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="loginPage">
     
-
     <Grid >
+        
         <Image Stretch="Fill">
             <Image.Source>
                 <BitmapImage DecodePixelHeight="100" 
@@ -60,13 +60,20 @@
                             Margin="10"
                             Padding="5"/>
 
-                    <Button Name="CreateAnAccountButton" Content="Create an account" 
+                    <TextBlock Foreground="White">
+                        <Hyperlink Name="CreateAccountLink" 
+                                   NavigateUri="UserRegistrationPage"
+                                   Click="CreateAccountLink_Click">Create an account</Hyperlink>
+                    </TextBlock>
+
+
+                    <!--Button Name="CreateAnAccountButton" Content="Create an account" 
                     FontSize="14" 
                     Width="200"
                     Foreground="White"
                     Background="Transparent"
                     BorderThickness="0"  
-                    Click="CreateAnAccountButton_Click"/>
+                    Click="CreateAnAccountButton_Click"/-->
                 </StackPanel>
             </Border>
         </StackPanel>

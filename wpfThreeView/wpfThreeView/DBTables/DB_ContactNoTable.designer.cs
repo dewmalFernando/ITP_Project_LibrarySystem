@@ -22,6 +22,7 @@ namespace wpfThreeView.DBTables
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibraryManagementSystem")]
 	public partial class DB_ContactNoTableDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace wpfThreeView.DBTables
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTable_Member_Contact(Table_Member_Contact instance);
+    partial void UpdateTable_Member_Contact(Table_Member_Contact instance);
+    partial void DeleteTable_Member_Contact(Table_Member_Contact instance);
     #endregion
+		
+		public DB_ContactNoTableDataContext() : 
+				base(global::wpfThreeView.Properties.Settings.Default.LibraryManagementSystemConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DB_ContactNoTableDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,100 @@ namespace wpfThreeView.DBTables
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Table_Member_Contact> Table_Member_Contacts
+		{
+			get
+			{
+				return this.GetTable<Table_Member_Contact>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Member_Contact")]
+	public partial class Table_Member_Contact : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Phone;
+		
+		private string _Member_ID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPhoneChanging(int value);
+    partial void OnPhoneChanged();
+    partial void OnMember_IDChanging(string value);
+    partial void OnMember_IDChanged();
+    #endregion
+		
+		public Table_Member_Contact()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Member_ID
+		{
+			get
+			{
+				return this._Member_ID;
+			}
+			set
+			{
+				if ((this._Member_ID != value))
+				{
+					this.OnMember_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Member_ID = value;
+					this.SendPropertyChanged("Member_ID");
+					this.OnMember_IDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

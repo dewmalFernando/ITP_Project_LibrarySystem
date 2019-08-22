@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpfThreeView.DBTables;
 
 namespace wpfThreeView
 {
@@ -20,9 +21,15 @@ namespace wpfThreeView
     /// </summary>
     public partial class CheckFinesPage : Page
     {
+
+        DB_FinesTableDataContext dbFinesTableDataContext = new DB_FinesTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
+
         public CheckFinesPage()
         {
             InitializeComponent();
+
+            if (dbFinesTableDataContext.DatabaseExists())
+                checkFinesDataGrid.ItemsSource = dbFinesTableDataContext.Table_Fines;
         }
     }
 }

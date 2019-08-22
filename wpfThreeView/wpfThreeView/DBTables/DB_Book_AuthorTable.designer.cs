@@ -22,6 +22,7 @@ namespace wpfThreeView.DBTables
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibraryManagementSystem")]
 	public partial class DB_Book_AuthorTableDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace wpfThreeView.DBTables
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTable_Book_Author(Table_Book_Author instance);
+    partial void UpdateTable_Book_Author(Table_Book_Author instance);
+    partial void DeleteTable_Book_Author(Table_Book_Author instance);
     #endregion
+		
+		public DB_Book_AuthorTableDataContext() : 
+				base(global::wpfThreeView.Properties.Settings.Default.LibraryManagementSystemConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DB_Book_AuthorTableDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,100 @@ namespace wpfThreeView.DBTables
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Table_Book_Author> Table_Book_Authors
+		{
+			get
+			{
+				return this.GetTable<Table_Book_Author>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Book_Author")]
+	public partial class Table_Book_Author : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Author_ID;
+		
+		private string _Book_ID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAuthor_IDChanging(string value);
+    partial void OnAuthor_IDChanged();
+    partial void OnBook_IDChanging(string value);
+    partial void OnBook_IDChanged();
+    #endregion
+		
+		public Table_Book_Author()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author_ID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Author_ID
+		{
+			get
+			{
+				return this._Author_ID;
+			}
+			set
+			{
+				if ((this._Author_ID != value))
+				{
+					this.OnAuthor_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Author_ID = value;
+					this.SendPropertyChanged("Author_ID");
+					this.OnAuthor_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Book_ID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Book_ID
+		{
+			get
+			{
+				return this._Book_ID;
+			}
+			set
+			{
+				if ((this._Book_ID != value))
+				{
+					this.OnBook_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Book_ID = value;
+					this.SendPropertyChanged("Book_ID");
+					this.OnBook_IDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

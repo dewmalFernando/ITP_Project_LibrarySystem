@@ -1,1 +1,11 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraryManagementSystem" Class="DB_PublisherTableDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True" SettingsObjectName="wpfThreeView.Properties.Settings" SettingsPropertyName="LibraryManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Publisher" Member="Table_Publishers">
+    <Type Name="Table_Publisher">
+      <Column Name="Publisher_ID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Book_Names" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="No_Of_Books" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

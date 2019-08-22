@@ -20,7 +20,6 @@ namespace wpfThreeView
     /// </summary>
     public partial class CheckBorrowedBookDetailsPage : Page
     {
-        
 
         public CheckBorrowedBookDetailsPage()
         {

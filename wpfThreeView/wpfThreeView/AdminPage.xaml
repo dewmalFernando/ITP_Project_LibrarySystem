@@ -31,7 +31,7 @@
                             Content="User Details Manipulation"
                             Click="UserDetailsManipulationButton_Click"
                             Margin="0 0 5 5"
-                            Background="Gray"
+                            Background="#FF3E3E40"
                             Foreground="White"
                             BorderBrush="Gray"
                             FontSize="12"
@@ -45,7 +45,8 @@
                             Margin="0 0 5 5"
                             BorderBrush="LightGray"
                             FontSize="12"
-                            FontWeight="Bold"/>
+                            FontWeight="Bold" 
+                            Background="#FFC2C2C2"/>
 
                     <!--Check Borrowed Books button-->
                     <Button Grid.Row="2" 
@@ -53,7 +54,7 @@
                             Content="Check Borrowed Book Details"
                             Click="CheckBorrowedBookButton_Click"
                             Margin="0 0 5 0"
-                            Background="Gray"
+                            Background="#FF3E3E40"
                             Foreground="White"
                             BorderBrush="Gray"
                             FontSize="12"
@@ -62,7 +63,8 @@
             </Border>
 
             <!--Large border-->
-            <Border Grid.Column="1" Background="White">
+            <Border Grid.Column="1" 
+                    Background="White">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
@@ -76,7 +78,7 @@
                             Content="Catalogue"
                             Click="CatalogueButton_Click"
                             Margin="0 0 0 5"
-                            Background="Gray"
+                            Background="#FF3E3E40"
                             Foreground="White"
                             BorderBrush="Gray"
                             FontSize="12"
@@ -87,13 +89,15 @@
                             Name="UsersButton"
                             Content="User Details"
                             Click="UsersButton_Click"
-                            Margin="0 0 0 5"
                             BorderBrush="LightGray"
+                            Margin="0 0 0 5"
                             FontSize="12"
-                            FontWeight="Bold"/>
+                            FontWeight="Bold" 
+                            Background="#FFC3C3C3" />
 
                     <!--Sub Border inside the Large Border-->
-                    <Border Grid.Column="1" Grid.Row="2">
+                    <Border Grid.Column="1" 
+                            Grid.Row="2">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
@@ -106,7 +110,7 @@
                                     Content="Check Overdue Books"
                                     Click="OverdueBooksButton_Click"
                                     Margin="0 0 5 0"
-                                    Background="Gray"
+                                    Background="#FF3E3E40"
                                     Foreground="White"
                                     BorderBrush="Gray"
                                     FontSize="12"
@@ -118,7 +122,7 @@
                                     Content="Check Fines"
                                     Click="CheckFinesButton_Click"
                                     Margin="0 0 0 0"
-                                    Background="Gray"
+                                    Background="#FF424243"
                                     Foreground="White"
                                     BorderBrush="Gray"
                                     FontSize="12"

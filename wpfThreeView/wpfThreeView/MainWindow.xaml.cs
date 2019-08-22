@@ -23,17 +23,16 @@ namespace wpfThreeView
         public MainWindow()
         {
             InitializeComponent();
+
+           /* loginPage loginPage = new loginPage();
+            this.Content = loginPage;*/
+
            
         }
 
         private void GoToLoginButton_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new loginPage();
-        }
-
-        private void GoToRegisterButton_Click(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Content = new AdminRegistrationPage();
         }
 
         private void GoToAdminPage_Click(object sender, RoutedEventArgs e)

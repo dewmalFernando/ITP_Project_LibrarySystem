@@ -1,1 +1,9 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraryManagementSystem" Class="DB_ContactNoTableDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True" SettingsObjectName="wpfThreeView.Properties.Settings" SettingsPropertyName="LibraryManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Member_Contact" Member="Table_Member_Contacts">
+    <Type Name="Table_Member_Contact">
+      <Column Name="Phone" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Member_ID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -22,6 +22,7 @@ namespace wpfThreeView.DBTables
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibraryManagementSystem")]
 	public partial class DB_AuthorTableDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace wpfThreeView.DBTables
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTable_Author(Table_Author instance);
+    partial void UpdateTable_Author(Table_Author instance);
+    partial void DeleteTable_Author(Table_Author instance);
     #endregion
+		
+		public DB_AuthorTableDataContext() : 
+				base(global::wpfThreeView.Properties.Settings.Default.LibraryManagementSystemConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DB_AuthorTableDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,148 @@ namespace wpfThreeView.DBTables
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Table_Author> Table_Authors
+		{
+			get
+			{
+				return this.GetTable<Table_Author>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Author")]
+	public partial class Table_Author : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Author_ID;
+		
+		private string _Name;
+		
+		private string _Book_Names;
+		
+		private System.Nullable<int> _No_Of_Books;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAuthor_IDChanging(string value);
+    partial void OnAuthor_IDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnBook_NamesChanging(string value);
+    partial void OnBook_NamesChanged();
+    partial void OnNo_Of_BooksChanging(System.Nullable<int> value);
+    partial void OnNo_Of_BooksChanged();
+    #endregion
+		
+		public Table_Author()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author_ID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Author_ID
+		{
+			get
+			{
+				return this._Author_ID;
+			}
+			set
+			{
+				if ((this._Author_ID != value))
+				{
+					this.OnAuthor_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Author_ID = value;
+					this.SendPropertyChanged("Author_ID");
+					this.OnAuthor_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Book_Names", DbType="VarChar(50)")]
+		public string Book_Names
+		{
+			get
+			{
+				return this._Book_Names;
+			}
+			set
+			{
+				if ((this._Book_Names != value))
+				{
+					this.OnBook_NamesChanging(value);
+					this.SendPropertyChanging();
+					this._Book_Names = value;
+					this.SendPropertyChanged("Book_Names");
+					this.OnBook_NamesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_No_Of_Books", DbType="Int")]
+		public System.Nullable<int> No_Of_Books
+		{
+			get
+			{
+				return this._No_Of_Books;
+			}
+			set
+			{
+				if ((this._No_Of_Books != value))
+				{
+					this.OnNo_Of_BooksChanging(value);
+					this.SendPropertyChanging();
+					this._No_Of_Books = value;
+					this.SendPropertyChanged("No_Of_Books");
+					this.OnNo_Of_BooksChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

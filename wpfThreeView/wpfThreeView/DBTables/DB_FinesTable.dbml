@@ -1,1 +1,10 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraryManagementSystem" Class="DB_FinesTableDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True" SettingsObjectName="wpfThreeView.Properties.Settings" SettingsPropertyName="LibraryManagementSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Fines" Member="Table_Fines">
+    <Type Name="Table_Fine">
+      <Column Name="Number" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Member_ID" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Single" DbType="Real" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

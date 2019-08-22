@@ -1,1 +1,12 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DB_Book_AuthorTable">
+  <DataContextMoniker Name="/DB_Book_AuthorTableDataContext" />
+  <nestedChildShapes>
+    <classShape Id="00a03b2b-6af5-4473-9e8d-d143d84a6378" absoluteBounds="5.75, 1.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DB_Book_AuthorTableDataContext/Table_Book_Author" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6dedaa1b-9a84-43cd-ab79-94b366238368" absoluteBounds="5.765, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

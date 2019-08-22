@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace wpfThreeView
         public UserRegistrationPage()
         {
             InitializeComponent();
+
         }
 
         private void RegistrationCancelButton_Click(object sender, RoutedEventArgs e)
@@ -33,6 +35,15 @@ namespace wpfThreeView
         private void RegistrationConfirmButton_Click(object sender, RoutedEventArgs e)
         {
 
+           /* String conSrting = "Data Cource"
+            SqlConnection sqlCon = new  SqlConnection()
+
+             String memberkId, firstName, lastName, email;
+             int age, noOfBooksBorrowed;
+             char gender;
+
+            firstName = FirstNameTextBox.Text;*/
+            
         }
     }
 }

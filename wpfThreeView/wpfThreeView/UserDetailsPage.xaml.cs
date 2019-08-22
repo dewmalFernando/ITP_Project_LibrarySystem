@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpfThreeView.DBTables;
 
 namespace wpfThreeView
 {
@@ -20,9 +21,16 @@ namespace wpfThreeView
     /// </summary>
     public partial class UserDetailsPage : Page
     {
+
+        DB_MemberTableDataContext dbMemberTableDataContext = new DB_MemberTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
+
+
         public UserDetailsPage()
         {
             InitializeComponent();
+
+            if (dbMemberTableDataContext.DatabaseExists())
+                userDetailsDataGrid.ItemsSource = dbMemberTableDataContext.Table_Members;
         }
     }
 }

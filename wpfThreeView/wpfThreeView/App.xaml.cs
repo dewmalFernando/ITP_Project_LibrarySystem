@@ -13,5 +13,6 @@ namespace wpfThreeView
     /// </summary>
     public partial class App : Application
     {
+       
     }
 }

@@ -22,6 +22,7 @@ namespace wpfThreeView.DBTables
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibraryManagementSystem")]
 	public partial class DB_MemberTableDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -29,7 +30,16 @@ namespace wpfThreeView.DBTables
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTable_Member(Table_Member instance);
+    partial void UpdateTable_Member(Table_Member instance);
+    partial void DeleteTable_Member(Table_Member instance);
     #endregion
+		
+		public DB_MemberTableDataContext() : 
+				base(global::wpfThreeView.Properties.Settings.Default.LibraryManagementSystemConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DB_MemberTableDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +63,244 @@ namespace wpfThreeView.DBTables
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<Table_Member> Table_Members
+		{
+			get
+			{
+				return this.GetTable<Table_Member>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Member")]
+	public partial class Table_Member : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Member_ID;
+		
+		private string _First_Name;
+		
+		private string _Last_Name;
+		
+		private System.Nullable<int> _Age;
+		
+		private System.Nullable<char> _Gender;
+		
+		private string _Type;
+		
+		private string _E_Mail;
+		
+		private int _No_Of_Book_Borrowed;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMember_IDChanging(string value);
+    partial void OnMember_IDChanged();
+    partial void OnFirst_NameChanging(string value);
+    partial void OnFirst_NameChanged();
+    partial void OnLast_NameChanging(string value);
+    partial void OnLast_NameChanged();
+    partial void OnAgeChanging(System.Nullable<int> value);
+    partial void OnAgeChanged();
+    partial void OnGenderChanging(System.Nullable<char> value);
+    partial void OnGenderChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnE_MailChanging(string value);
+    partial void OnE_MailChanged();
+    partial void OnNo_Of_Book_BorrowedChanging(int value);
+    partial void OnNo_Of_Book_BorrowedChanged();
+    #endregion
+		
+		public Table_Member()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Member_ID
+		{
+			get
+			{
+				return this._Member_ID;
+			}
+			set
+			{
+				if ((this._Member_ID != value))
+				{
+					this.OnMember_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Member_ID = value;
+					this.SendPropertyChanged("Member_ID");
+					this.OnMember_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_First_Name", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string First_Name
+		{
+			get
+			{
+				return this._First_Name;
+			}
+			set
+			{
+				if ((this._First_Name != value))
+				{
+					this.OnFirst_NameChanging(value);
+					this.SendPropertyChanging();
+					this._First_Name = value;
+					this.SendPropertyChanged("First_Name");
+					this.OnFirst_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Name", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Last_Name
+		{
+			get
+			{
+				return this._Last_Name;
+			}
+			set
+			{
+				if ((this._Last_Name != value))
+				{
+					this.OnLast_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Last_Name = value;
+					this.SendPropertyChanged("Last_Name");
+					this.OnLast_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this.OnAgeChanging(value);
+					this.SendPropertyChanging();
+					this._Age = value;
+					this.SendPropertyChanged("Age");
+					this.OnAgeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="Char(1)")]
+		public System.Nullable<char> Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_E_Mail", DbType="VarChar(30)")]
+		public string E_Mail
+		{
+			get
+			{
+				return this._E_Mail;
+			}
+			set
+			{
+				if ((this._E_Mail != value))
+				{
+					this.OnE_MailChanging(value);
+					this.SendPropertyChanging();
+					this._E_Mail = value;
+					this.SendPropertyChanged("E_Mail");
+					this.OnE_MailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_No_Of_Book_Borrowed", DbType="Int NOT NULL")]
+		public int No_Of_Book_Borrowed
+		{
+			get
+			{
+				return this._No_Of_Book_Borrowed;
+			}
+			set
+			{
+				if ((this._No_Of_Book_Borrowed != value))
+				{
+					this.OnNo_Of_Book_BorrowedChanging(value);
+					this.SendPropertyChanging();
+					this._No_Of_Book_Borrowed = value;
+					this.SendPropertyChanged("No_Of_Book_Borrowed");
+					this.OnNo_Of_Book_BorrowedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

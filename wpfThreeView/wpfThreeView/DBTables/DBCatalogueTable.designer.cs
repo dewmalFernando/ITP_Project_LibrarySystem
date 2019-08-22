@@ -80,13 +80,13 @@ namespace wpfThreeView.DBTables
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _BID;
+		private int _ISBN;
+		
+		private string _Book_ID;
 		
 		private string _Book_Name;
 		
 		private string _Author_Name;
-		
-		private System.Nullable<int> _ISBN;
 		
 		private System.Nullable<int> _No_Of_Copies;
 		
@@ -98,14 +98,14 @@ namespace wpfThreeView.DBTables
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBIDChanging(string value);
-    partial void OnBIDChanged();
+    partial void OnISBNChanging(int value);
+    partial void OnISBNChanged();
+    partial void OnBook_IDChanging(string value);
+    partial void OnBook_IDChanged();
     partial void OnBook_NameChanging(string value);
     partial void OnBook_NameChanged();
     partial void OnAuthor_NameChanging(string value);
     partial void OnAuthor_NameChanged();
-    partial void OnISBNChanging(System.Nullable<int> value);
-    partial void OnISBNChanged();
     partial void OnNo_Of_CopiesChanging(System.Nullable<int> value);
     partial void OnNo_Of_CopiesChanged();
     partial void OnAvilable_CopiesChanging(System.Nullable<int> value);
@@ -119,22 +119,42 @@ namespace wpfThreeView.DBTables
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string BID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ISBN
 		{
 			get
 			{
-				return this._BID;
+				return this._ISBN;
 			}
 			set
 			{
-				if ((this._BID != value))
+				if ((this._ISBN != value))
 				{
-					this.OnBIDChanging(value);
+					this.OnISBNChanging(value);
 					this.SendPropertyChanging();
-					this._BID = value;
-					this.SendPropertyChanged("BID");
-					this.OnBIDChanged();
+					this._ISBN = value;
+					this.SendPropertyChanged("ISBN");
+					this.OnISBNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Book_ID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Book_ID
+		{
+			get
+			{
+				return this._Book_ID;
+			}
+			set
+			{
+				if ((this._Book_ID != value))
+				{
+					this.OnBook_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Book_ID = value;
+					this.SendPropertyChanged("Book_ID");
+					this.OnBook_IDChanged();
 				}
 			}
 		}
@@ -175,26 +195,6 @@ namespace wpfThreeView.DBTables
 					this._Author_Name = value;
 					this.SendPropertyChanged("Author_Name");
 					this.OnAuthor_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="Int")]
-		public System.Nullable<int> ISBN
-		{
-			get
-			{
-				return this._ISBN;
-			}
-			set
-			{
-				if ((this._ISBN != value))
-				{
-					this.OnISBNChanging(value);
-					this.SendPropertyChanging();
-					this._ISBN = value;
-					this.SendPropertyChanged("ISBN");
-					this.OnISBNChanged();
 				}
 			}
 		}

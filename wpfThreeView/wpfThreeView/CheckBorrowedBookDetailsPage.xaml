@@ -9,7 +9,7 @@
       Title="CheckBorrowedBookDetailsPage">
 
     <Border>
-        <Grid>
+        <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"/>
                 <RowDefinition Height="*"/>

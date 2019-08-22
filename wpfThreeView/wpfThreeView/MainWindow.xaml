@@ -9,17 +9,17 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid >
-        
-       
+
+
         <StackPanel>
             <Button Name="goToLoginButton" Content="Go To Login" Click="GoToLoginButton_Click"/>
-            <Button Name="goToRegisterButton" Content="Go To Register" Click="GoToRegisterButton_Click"/>
+           
             <Button Name="goToAdminPage" Content="Go To Admin Page" Click="GoToAdminPage_Click"/>
             <Button Name="goToUserRegistration" Content="Go To User Registraion Page" Click="GoToUserRegistration_Click"/>
             <Button Name="goToCatalogue" Content="Go To Catalogue Page" Click="GoToCatalogue_Click"/>
             <Button Name="goToBook" Content="Go To Book Page" Click="GoToBook_Click"/>
         </StackPanel>
-        
+
         <Frame Name="mainFrame" >
                 
             </Frame>

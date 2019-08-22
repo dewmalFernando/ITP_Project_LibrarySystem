@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,11 @@ namespace wpfThreeView
     /// </summary>
     public partial class loginPage : Page
     {
+        
         public loginPage()
         {
             InitializeComponent();
+
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -35,9 +38,12 @@ namespace wpfThreeView
             
         }
 
-        private void CreateAnAccountButton_Click(object sender, RoutedEventArgs e)
+      
+        private void CreateAccountLink_Click(object sender, RoutedEventArgs e)
         {
 
+            UserRegistrationPage userRegistrationPage = new UserRegistrationPage();
+            this.NavigationService.Navigate(userRegistrationPage);
         }
     }
 }
