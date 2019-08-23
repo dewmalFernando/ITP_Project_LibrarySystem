@@ -24,23 +24,21 @@ namespace wpfThreeView
     {
 
         DB_MemberTableDataContext dbMemberTableDataContext = new DB_MemberTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
-        //List<Member> member = new List<Member>();
+        List<Member> member = new List<Member>();
 
         public UserDetailsPage()
         {
             InitializeComponent();
-
-           
-
+            
             if (dbMemberTableDataContext.DatabaseExists())
                 userDetailsDataGrid.ItemsSource = dbMemberTableDataContext.Table_Members;
         }
 
         private void SearchMemberButton_Click(object sender, RoutedEventArgs e)
         {
-            //DataAccess dataAccess = new DataAccess();
+            DataAccess dataAccess = new DataAccess();
 
-            //member = dataAccess.GetMember(SerachMemberTextBox.Text);
+            member = dataAccess.GetMember(SerachMemberTextBox.Text);
             //userDetailsDataGrid.DisplayMemberPath = "FullInfo";
         }
     }

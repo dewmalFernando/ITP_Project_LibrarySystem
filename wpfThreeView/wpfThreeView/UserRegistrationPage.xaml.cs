@@ -37,8 +37,10 @@ namespace wpfThreeView
         {
             DataAccess dataAccess = new DataAccess();
 
-           // dataAccess.InsertMember(FirstNameTextBox.Text, LastNameTextBox.Text, int.Parse(AgeTextBox.Text), char.Parse(GenderComboBox.Text),
-               // UserTypeComboBox.Text, MailTextBox.Text);
+            dataAccess.InsertMember(FirstNameTextBox.Text, LastNameTextBox.Text, int.Parse(AgeTextBox.Text), char.Parse(GenderComboBox.Text),
+                UserTypeComboBox.Text, MailTextBox.Text);
+
+            
         }
     }
 }

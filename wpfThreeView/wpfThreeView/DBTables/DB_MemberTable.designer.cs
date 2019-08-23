@@ -80,7 +80,9 @@ namespace wpfThreeView.DBTables
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Member_ID;
+		private int _Member_ID;
+		
+		private string _Member_ID_Code;
 		
 		private string _First_Name;
 		
@@ -94,14 +96,16 @@ namespace wpfThreeView.DBTables
 		
 		private string _E_Mail;
 		
-		private int _No_Of_Book_Borrowed;
+		private System.Nullable<int> _No_Of_Book_Borrowed;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMember_IDChanging(string value);
+    partial void OnMember_IDChanging(int value);
     partial void OnMember_IDChanged();
+    partial void OnMember_ID_CodeChanging(string value);
+    partial void OnMember_ID_CodeChanged();
     partial void OnFirst_NameChanging(string value);
     partial void OnFirst_NameChanged();
     partial void OnLast_NameChanging(string value);
@@ -114,7 +118,7 @@ namespace wpfThreeView.DBTables
     partial void OnTypeChanged();
     partial void OnE_MailChanging(string value);
     partial void OnE_MailChanged();
-    partial void OnNo_Of_Book_BorrowedChanging(int value);
+    partial void OnNo_Of_Book_BorrowedChanging(System.Nullable<int> value);
     partial void OnNo_Of_Book_BorrowedChanged();
     #endregion
 		
@@ -123,8 +127,8 @@ namespace wpfThreeView.DBTables
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Member_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Member_ID
 		{
 			get
 			{
@@ -139,6 +143,26 @@ namespace wpfThreeView.DBTables
 					this._Member_ID = value;
 					this.SendPropertyChanged("Member_ID");
 					this.OnMember_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Member_ID_Code", AutoSync=AutoSync.Always, DbType="VarChar(6)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string Member_ID_Code
+		{
+			get
+			{
+				return this._Member_ID_Code;
+			}
+			set
+			{
+				if ((this._Member_ID_Code != value))
+				{
+					this.OnMember_ID_CodeChanging(value);
+					this.SendPropertyChanging();
+					this._Member_ID_Code = value;
+					this.SendPropertyChanged("Member_ID_Code");
+					this.OnMember_ID_CodeChanged();
 				}
 			}
 		}
@@ -263,8 +287,8 @@ namespace wpfThreeView.DBTables
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_No_Of_Book_Borrowed", DbType="Int NOT NULL")]
-		public int No_Of_Book_Borrowed
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_No_Of_Book_Borrowed", DbType="Int")]
+		public System.Nullable<int> No_Of_Book_Borrowed
 		{
 			get
 			{
