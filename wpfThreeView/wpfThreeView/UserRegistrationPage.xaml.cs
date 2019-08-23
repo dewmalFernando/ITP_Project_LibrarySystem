@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using wpfThreeView.Classes;
 
 namespace wpfThreeView
 {
@@ -29,21 +30,15 @@ namespace wpfThreeView
 
         private void RegistrationCancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+           // this.NavigationService.Refresh();
         }
 
         private void RegistrationConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            DataAccess dataAccess = new DataAccess();
 
-           /* String conSrting = "Data Cource"
-            SqlConnection sqlCon = new  SqlConnection()
-
-             String memberkId, firstName, lastName, email;
-             int age, noOfBooksBorrowed;
-             char gender;
-
-            firstName = FirstNameTextBox.Text;*/
-            
+           // dataAccess.InsertMember(FirstNameTextBox.Text, LastNameTextBox.Text, int.Parse(AgeTextBox.Text), char.Parse(GenderComboBox.Text),
+               // UserTypeComboBox.Text, MailTextBox.Text);
         }
     }
 }

@@ -35,7 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml" />
@@ -71,6 +75,10 @@
     <Compile Include="CheckOverdueBooksPage.xaml.cs">
       <DependentUpon>CheckOverdueBooksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\Helper.cs" />
+    <Compile Include="Classes\Member.cs" />
+    <Compile Include="Classes\Validations.cs" />
     <Compile Include="DBTables\DBBookTable.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +128,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_PublisherTable.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarySystemDataSet\LibraryManagementSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryManagementSystemDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UserDetailsManipulationPage.xaml.cs">
       <DependentUpon>UserDetailsManipulationPage.xaml</DependentUpon>
@@ -291,6 +304,18 @@
     <None Include="DBTables\DB_PublisherTable.dbml.layout">
       <DependentUpon>DB_PublisherTable.dbml</DependentUpon>
     </None>
+    <None Include="LibrarySystemDataSet\LibraryManagementSystemDataSet.xsc">
+      <DependentUpon>LibraryManagementSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibrarySystemDataSet\LibraryManagementSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryManagementSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibrarySystemDataSet\LibraryManagementSystemDataSet.xss">
+      <DependentUpon>LibraryManagementSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

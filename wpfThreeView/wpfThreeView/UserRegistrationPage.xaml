@@ -72,15 +72,7 @@
                         TextWrapping="Wrap" 
                         VerticalAlignment="Top" 
                         Width="107"/>
-
-                    <TextBlock  HorizontalAlignment="Left" 
-                        Height="32" 
-                        Margin="150,20,0,0" 
-                        Text="Phone Number :" 
-                        TextWrapping="Wrap" 
-                        VerticalAlignment="Top"
-                        Width="105"/>
-
+                    
                     <TextBlock  HorizontalAlignment="Left" 
                         Height="32" 
                         Margin="150,20,0,0" 
@@ -103,7 +95,7 @@
                      VerticalAlignment="Top" 
                      Width="295" />
 
-                    <TextBox  Name="LasttNameTextBox"  
+                    <TextBox  Name="LastNameTextBox"  
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,20,0,0" 
@@ -127,9 +119,9 @@
                      VerticalAlignment="Top" 
                      Width="295" >
                         <ComboBoxItem Name="Male" 
-                                      Content="Male"/>
+                                      Content="M"/>
                         <ComboBoxItem Name="Female" 
-                                      Content="Male"/>
+                                      Content="F"/>
                     </ComboBox>
 
                     <ComboBox  Name="UserTypeComboBox"  
@@ -145,15 +137,11 @@
                                       Content="Lecturer"/>
                         <ComboBoxItem Name="TypeProf" 
                                       Content="Prof"/>
+                        <ComboBoxItem Name="TypeAdmin" 
+                                      Content="Admin"/>
                     </ComboBox>
                     
-                    <TextBox  Name="PhoneTextBox" 
-                     HorizontalAlignment="Left" 
-                     Height="32" 
-                     Margin="30,20,0,0" 
-                     Text="" 
-                     VerticalAlignment="Top" 
-                     Width="295" />
+                    
 
                     <TextBox  Name="MailTextBox"  
                      HorizontalAlignment="Left" 
