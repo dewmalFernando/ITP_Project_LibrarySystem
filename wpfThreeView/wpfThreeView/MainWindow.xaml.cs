@@ -35,24 +35,12 @@ namespace wpfThreeView
             mainFrame.Content = new loginPage();
         }
 
-        private void GoToAdminPage_Click(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Content = new AdminPage();
-        }
-
-        private void GoToUserRegistration_Click(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Content = new UserRegistrationPage();
-        }
-
+       
         private void GoToCatalogue_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Content = new Catalogue();
+            mainFrame.Content = new CatalogueForUsers();
         }
 
-        private void GoToBook_Click(object sender, RoutedEventArgs e)
-        {
-            mainFrame.Content = new BookDetailsManipulationPage();
-        }
+       
     }
 }

@@ -47,5 +47,11 @@ namespace wpfThreeView
             AdminPage adminPage = new AdminPage();
             NavigationService.Navigate(adminPage);
         }
+
+        private void AdminRegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminRegisterPage adminRegisterPage = new AdminRegisterPage();
+            NavigationService.Navigate(adminRegisterPage);
+        }
     }
 }

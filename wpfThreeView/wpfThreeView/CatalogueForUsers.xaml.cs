@@ -19,16 +19,16 @@ using wpfThreeView.DBTables;
 namespace wpfThreeView
 {
     /// <summary>
-    /// Interaction logic for Catalogue.xaml
+    /// Interaction logic for CatalogueForUsers.xaml
     /// </summary>
-    public partial class Catalogue : Page
+    public partial class CatalogueForUsers : Page
     {
         //DBCatalogueTableDataContext dbCatalogueTableData = new DBCatalogueTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
         DBBookTableDataContext dbBookTableData = new DBBookTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True");
 
 
-        public Catalogue()
+        public CatalogueForUsers()
         {
             InitializeComponent();
 
@@ -38,8 +38,8 @@ namespace wpfThreeView
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            AdminPage adminPage = new AdminPage();
-            NavigationService.Navigate(adminPage);
+            MainWindow mainWindow = new MainWindow();
+            NavigationService.Navigate(mainWindow);
         }
 
         private void SerachTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -58,5 +58,4 @@ namespace wpfThreeView
             sqlConnection.Close();
         }
     }
- }
-
+}

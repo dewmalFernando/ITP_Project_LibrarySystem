@@ -22,7 +22,8 @@ namespace wpfThreeView
     /// </summary>
     public partial class loginPage : Page
     {
-        
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True");
+
         public loginPage()
         {
             InitializeComponent();
@@ -33,7 +34,31 @@ namespace wpfThreeView
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (sqlConnection.State == System.Data.ConnectionState.Closed) sqlConnection.Open();
+                String query = "SELECT COUNT(1) FROM AdminLogin WHERE UserName = @UserName AND Password = @Password";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.CommandType = System.Data.CommandType.Text;
+                sqlCommand.Parameters.AddWithValue("@UserName", userNameTextBox.Text);
+                sqlCommand.Parameters.AddWithValue("@Password", passwordTextBox.Password);
 
+                int count = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+                if(count == 1)
+                {
+                    AdminPage adminPage = new AdminPage();
+                    NavigationService.Navigate(adminPage);
+                }
+                else
+                {
+                    MessageBox.Show("Username or password is incorrect");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

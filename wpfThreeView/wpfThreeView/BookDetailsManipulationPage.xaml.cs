@@ -52,7 +52,7 @@ namespace wpfThreeView
 
             //string connectionString = @"server=localhost;userid=user1;password=12345;database=mydb";
             
-                string connectionString = @" Data Source = DESKTOP - JJMIDS9\MSSQL; Initial Catalog = LibraryManagementSystem; Integrated Security = True";
+                /*string connectionString = @" Data Source = DESKTOP - JJMIDS9\MSSQL; Initial Catalog = LibraryManagementSystem; Integrated Security = True";
             SqlConnection connection = null;
             try
             {
@@ -67,7 +67,7 @@ namespace wpfThreeView
             {
                 if (connection != null)
                     connection.Close();
-            }
+            }*/
 
 
         }

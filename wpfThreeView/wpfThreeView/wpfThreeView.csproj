@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminRegisterPage.xaml.cs">
+      <DependentUpon>AdminRegisterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BookDetailsEnteringPage.xaml.cs">
       <DependentUpon>BookDetailsEnteringPage.xaml</DependentUpon>
     </Compile>
@@ -68,6 +71,9 @@
     </Compile>
     <Compile Include="Catalogue.xaml.cs">
       <DependentUpon>Catalogue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogueForUsers.xaml.cs">
+      <DependentUpon>CatalogueForUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="CheckBorrowedBookDetailsPage.xaml.cs">
       <DependentUpon>CheckBorrowedBookDetailsPage.xaml</DependentUpon>
@@ -78,6 +84,7 @@
     <Compile Include="CheckOverdueBooksPage.xaml.cs">
       <DependentUpon>CheckOverdueBooksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\Helper.cs" />
@@ -123,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_FinesTable.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DBTables\DB_LoginTable.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_LoginTable.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DBTables\DB_MemberTable.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +163,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminRegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BookDetailsEnteringPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Catalogue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CatalogueForUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -295,6 +315,14 @@
     </None>
     <None Include="DBTables\DB_FinesTable.dbml.layout">
       <DependentUpon>DB_FinesTable.dbml</DependentUpon>
+    </None>
+    <None Include="DBTables\DB_LoginTable.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB_LoginTable.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBTables\DB_LoginTable.dbml.layout">
+      <DependentUpon>DB_LoginTable.dbml</DependentUpon>
     </None>
     <None Include="DBTables\DB_MemberTable.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

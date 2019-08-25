@@ -57,5 +57,15 @@ namespace wpfThreeView.Classes
                 connection.Execute("dbo.Book_Delete @DeleteBookByID", book);
             }
         }*/
+
+        internal void InsertAdminLogin(String UserName, String Password)
+        {
+            using(IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("wpfThreeView.Properties.Settings.LibraryManagementSystemConnectionString")))
+            {
+                List<Admin> admin = new List<Admin>();
+                admin.Add(new Admin { userName = UserName, password = Password});
+                connection.Execute("dbo.Insert_Admin @UserName, @Password", admin);
+            }
+        }
     }
 }
