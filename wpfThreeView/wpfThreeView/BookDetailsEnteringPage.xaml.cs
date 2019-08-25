@@ -32,6 +32,10 @@ namespace wpfThreeView
 
             dataAccess.InsertBook(BookTitleTextBox.Text, AuthorNameTextBox.Text, int.Parse(NoOfCoppiesTextBox.Text), int.Parse(AvilabilityTextBox.Text),
                int.Parse(RackNoTextBox.Text), IsbnTextBox.Text, PublisherTextBox.Text);
+
+            
+
+
             MessageBox.Show("Record insert successful");
         }
 

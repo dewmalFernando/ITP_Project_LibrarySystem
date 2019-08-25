@@ -10,9 +10,8 @@
 
     <Grid>
         <Border 
-            Margin="5"
             Background="#FF0E0D0D" >
-            <ScrollViewer Margin="0,-50,0,0">
+            <ScrollViewer Margin="0,0,0,0">
 
                 <Grid Background="White">
                     <!--Grid.Background>
@@ -186,7 +185,7 @@
                     HorizontalAlignment="Stretch"
                     Width="200" 
                                  Background="#FF292929"
-                    Click="SaveButton_Click"/>
+                    Click="SaveButton_Click" Foreground="White"/>
 
                         <Button  Name="CancelTextBox" 
                     Content="Cancel"
@@ -195,7 +194,7 @@
                     VerticalAlignment="Top" 
                     HorizontalAlignment="Stretch"
                     Width="240" 
-                    Click="CancelTextBox_Click" Background="#FF292929"/>
+                    Click="CancelTextBox_Click" Background="#FF292929" Foreground="White"/>
                     </StackPanel>
 
                 </Grid>
