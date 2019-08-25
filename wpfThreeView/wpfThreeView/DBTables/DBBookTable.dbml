@@ -2,13 +2,14 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True" SettingsObjectName="wpfThreeView.Properties.Settings" SettingsPropertyName="LibraryManagementSystemConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Book" Member="Table_Books">
     <Type Name="Table_Book">
-      <Column Name="Book_ID" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Book_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Book_ID_Code" Type="System.String" DbType="VarChar(7)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Author" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="No_Of_Copies" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="No_Of_Coppies" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Avilability" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Rack_No" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ISBN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISBN" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
       <Column Name="Publisher" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>

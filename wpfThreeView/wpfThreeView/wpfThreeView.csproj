@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BookDetailsEnteringPage.xaml.cs">
+      <DependentUpon>BookDetailsEnteringPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BookDetailsManipulationPage.xaml.cs">
       <DependentUpon>BookDetailsManipulationPage.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,7 @@
     <Compile Include="CheckOverdueBooksPage.xaml.cs">
       <DependentUpon>CheckOverdueBooksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Book.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\Helper.cs" />
     <Compile Include="Classes\Member.cs" />
@@ -144,6 +148,10 @@
       <DependentUpon>UserRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookDetailsEnteringPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -332,6 +340,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\LibImg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\adminBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,5 +31,11 @@ namespace wpfThreeView
             if (dbFinesTableDataContext.DatabaseExists())
                 checkFinesDataGrid.ItemsSource = dbFinesTableDataContext.Table_Fines;
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            NavigationService.Navigate(adminPage);
+        }
     }
 }

@@ -30,5 +30,11 @@ namespace wpfThreeView
             if (dbCatalogueTableData.DatabaseExists())
                 catalogueDataGrid.ItemsSource = dbCatalogueTableData.Table_Catalogues;
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            NavigationService.Navigate(adminPage);
+        }
     }
 }

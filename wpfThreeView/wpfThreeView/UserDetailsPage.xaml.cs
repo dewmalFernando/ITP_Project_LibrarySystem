@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,7 @@ namespace wpfThreeView
     /// </summary>
     public partial class UserDetailsPage : Page
     {
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True");
 
         DB_MemberTableDataContext dbMemberTableDataContext = new DB_MemberTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
         List<Member> member = new List<Member>();
@@ -36,10 +39,28 @@ namespace wpfThreeView
 
         private void SearchMemberButton_Click(object sender, RoutedEventArgs e)
         {
-            DataAccess dataAccess = new DataAccess();
+            //DataAccess dataAccess = new DataAccess();
 
-            member = dataAccess.GetMember(SerachMemberTextBox.Text);
-            //userDetailsDataGrid.DisplayMemberPath = "FullInfo";
+            //member = dataAccess.GetMember(int.Parse(SerachMemberTextBox.Text));
+            //userDetailsDataGrid = "FullInfo";
+
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "SELECT * FROM Member WHERE Member_ID LIKE('" + SerachMemberTextBox.Text+ "%')";
+            cmd.ExecuteNonQuery();
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+            sqlDataAdapter.Fill(dataTable);
+            userDetailsDataGrid.ItemsSource = dataTable.DefaultView;
+
+            con.Close();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            NavigationService.Navigate(adminPage);
         }
     }
 }

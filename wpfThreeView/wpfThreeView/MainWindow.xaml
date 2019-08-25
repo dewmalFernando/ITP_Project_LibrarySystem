@@ -8,25 +8,62 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid >
+    <Grid Background="#FF191818" >
+        <StackPanel HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    TextBlock.TextAlignment="Center">
+            
+            <Image Source="Images/LOGO.png" 
+               Height="200"
+               Width="200"
+               VerticalAlignment="Top"
+               Margin="0 0 0 0"/>
+
+            <TextBlock Text="LIBRARY MANAGEMENT SYSTEM"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="30"
+                   Margin="0 5 0 0" 
+                   Foreground="#FFF9F9F9"/>
+
+            <Button Name="goToLoginButton" 
+                Content="Login"
+                Height="30"
+                Width="250"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0 20 0 0"
+                Click="GoToLoginButton_Click"/>
+
+            <Button Name="goToCatalogue" 
+                Content="Catalogue Page" 
+                Height="30"
+                Width="250"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0 5 0 0"
+                Click="GoToCatalogue_Click"/>
 
 
-        <StackPanel>
-            <Button Name="goToLoginButton" Content="Go To Login" Click="GoToLoginButton_Click"/>
-           
-            <Button Name="goToAdminPage" Content="Go To Admin Page" Click="GoToAdminPage_Click"/>
-            <Button Name="goToUserRegistration" Content="Go To User Registraion Page" Click="GoToUserRegistration_Click"/>
-            <Button Name="goToCatalogue" Content="Go To Catalogue Page" Click="GoToCatalogue_Click"/>
-            <Button Name="goToBook" Content="Go To Book Page" Click="GoToBook_Click"/>
+
+            <Button Name="goToAdminPage" 
+                Content="Go To Admin Page" 
+                Height="20"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Click="GoToAdminPage_Click"/>
         </StackPanel>
+        
+
+
 
         <Frame Name="mainFrame" >
-                
-            </Frame>
 
-        </Grid>
-    
-    
-        
-   
+        </Frame>
+
+    </Grid>
+
+
+
+
 </Window>

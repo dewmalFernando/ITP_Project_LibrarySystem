@@ -16,6 +16,15 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
+                <Button Name="BackButton"
+                        Content="Back"
+                        Height="30"
+                        Width="100"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="10 10 0 0"
+                        Click="BackButton_Click"/>
+
 
                 <StackPanel Grid.Column="0" 
                             HorizontalAlignment="Center" 

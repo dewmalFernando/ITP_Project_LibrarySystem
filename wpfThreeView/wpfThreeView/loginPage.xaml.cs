@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace wpfThreeView
 {
     /// <summary>
@@ -25,8 +26,10 @@ namespace wpfThreeView
         public loginPage()
         {
             InitializeComponent();
-
+            
         }
+
+        
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
@@ -45,5 +48,7 @@ namespace wpfThreeView
             UserRegistrationPage userRegistrationPage = new UserRegistrationPage();
             this.NavigationService.Navigate(userRegistrationPage);
         }
+
+       
     }
 }

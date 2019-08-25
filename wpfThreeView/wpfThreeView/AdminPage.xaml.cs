@@ -66,5 +66,15 @@ namespace wpfThreeView
             CheckFinesPage checkFinesPage = new CheckFinesPage();
             this.NavigationService.Navigate(checkFinesPage);
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -27,5 +27,11 @@ namespace wpfThreeView
         {
             InitializeComponent();
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            NavigationService.Navigate(adminPage);
+        }
     }
 }

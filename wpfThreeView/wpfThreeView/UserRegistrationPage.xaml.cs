@@ -30,7 +30,8 @@ namespace wpfThreeView
 
         private void RegistrationCancelButton_Click(object sender, RoutedEventArgs e)
         {
-           // this.NavigationService.Refresh();
+            AdminPage adminPage = new AdminPage();
+            NavigationService.Navigate(adminPage);
         }
 
         private void RegistrationConfirmButton_Click(object sender, RoutedEventArgs e)
@@ -39,6 +40,12 @@ namespace wpfThreeView
 
             dataAccess.InsertMember(FirstNameTextBox.Text, LastNameTextBox.Text, int.Parse(AgeTextBox.Text), char.Parse(GenderComboBox.Text),
                 UserTypeComboBox.Text, MailTextBox.Text);
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            NavigationService.Navigate(adminPage);
         }
     }
 }

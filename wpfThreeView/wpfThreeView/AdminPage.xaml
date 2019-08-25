@@ -8,7 +8,7 @@
       d:DesignHeight="453.456" d:DesignWidth="753.348"
       Title="AdminPage">
 
-    <Border Background="White" Padding="10">
+    <Border Background="White" Padding="5">
         <Grid>
             <!--Dividing border into tow main parts-->
             <Grid.ColumnDefinitions>
@@ -20,13 +20,23 @@
             <Border Grid.Column="0" Background="White">
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="0.26*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
+                    <Button Name="BackButton"
+                            Content="Back"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            Width="100"
+                            Height="30"
+                            Click="BackButton_Click"/>
+                    
+                    
                     <!--User Details Manipulation Button-->
-                    <Button Grid.Row="0" 
+                    <Button Grid.Row="1" 
                             Name="UserDetailsManipulationButton"
                             Content="User Details Manipulation"
                             Click="UserDetailsManipulationButton_Click"
@@ -38,7 +48,7 @@
                             FontWeight="Bold"/>
 
                     <!--Book Details Manipulation Button-->
-                    <Button Grid.Row="1" 
+                    <Button Grid.Row="2" 
                             Name="BookDetailsManipulationButton"
                             Content="Book Details Manipulation"
                             Click="BookDetailsManipulationButton_Click"
@@ -49,7 +59,7 @@
                             Background="#FFC2C2C2"/>
 
                     <!--Check Borrowed Books button-->
-                    <Button Grid.Row="2" 
+                    <Button Grid.Row="3" 
                             Name="CheckBorrowedBookButton"
                             Content="Check Borrowed Book Details"
                             Click="CheckBorrowedBookButton_Click"
@@ -66,14 +76,24 @@
             <Border Grid.Column="1" 
                     Background="White">
                 <Grid>
+                    
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="0.26*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
+                    <Button Name="LogoutButton"
+                            Content="Logout"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Right"
+                            Width="100"
+                            Height="30"
+                            Click="LogoutButton_Click"/>
+                    
                     <!--Catalogue Button-->
-                    <Button Grid.Row="0" 
+                    <Button Grid.Row="1" 
                             Name="CatalogueButton"
                             Content="Catalogue"
                             Click="CatalogueButton_Click"
@@ -85,7 +105,7 @@
                             FontWeight="Bold"/>
 
                     <!--User details Button-->
-                    <Button Grid.Row="1" 
+                    <Button Grid.Row="2" 
                             Name="UsersButton"
                             Content="User Details"
                             Click="UsersButton_Click"
@@ -97,7 +117,7 @@
 
                     <!--Sub Border inside the Large Border-->
                     <Border Grid.Column="1" 
-                            Grid.Row="2">
+                            Grid.Row="3">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>

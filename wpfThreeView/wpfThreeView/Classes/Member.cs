@@ -17,12 +17,12 @@ namespace wpfThreeView.Classes
         public String email { get; set; }
         public int noOfBooksBorrowed { get; set; }
 
-        /*public String FullInfo 
+        public String FullInfo 
         {
             get 
             { 
-                return $"{ firstName} {lastName} ({ email })"; 
+                return $"{firstName} {lastName} ({ email })"; 
             }
-        }*/
+        }
     }
 }

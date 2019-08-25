@@ -12,7 +12,6 @@ namespace wpfThreeView.Classes
         public static string CnnVal(String name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
-
         } 
     }
 }

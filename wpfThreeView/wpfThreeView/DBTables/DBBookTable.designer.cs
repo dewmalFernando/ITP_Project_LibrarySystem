@@ -80,19 +80,21 @@ namespace wpfThreeView.DBTables
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Book_ID;
+		private int _Book_ID;
+		
+		private string _Book_ID_Code;
 		
 		private string _Title;
 		
 		private string _Author;
 		
-		private System.Nullable<int> _No_Of_Copies;
+		private System.Nullable<int> _No_Of_Coppies;
 		
 		private System.Nullable<int> _Avilability;
 		
 		private System.Nullable<int> _Rack_No;
 		
-		private System.Nullable<int> _ISBN;
+		private string _ISBN;
 		
 		private string _Publisher;
 		
@@ -100,19 +102,21 @@ namespace wpfThreeView.DBTables
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnBook_IDChanging(string value);
+    partial void OnBook_IDChanging(int value);
     partial void OnBook_IDChanged();
+    partial void OnBook_ID_CodeChanging(string value);
+    partial void OnBook_ID_CodeChanged();
     partial void OnTitleChanging(string value);
     partial void OnTitleChanged();
     partial void OnAuthorChanging(string value);
     partial void OnAuthorChanged();
-    partial void OnNo_Of_CopiesChanging(System.Nullable<int> value);
-    partial void OnNo_Of_CopiesChanged();
+    partial void OnNo_Of_CoppiesChanging(System.Nullable<int> value);
+    partial void OnNo_Of_CoppiesChanged();
     partial void OnAvilabilityChanging(System.Nullable<int> value);
     partial void OnAvilabilityChanged();
     partial void OnRack_NoChanging(System.Nullable<int> value);
     partial void OnRack_NoChanged();
-    partial void OnISBNChanging(System.Nullable<int> value);
+    partial void OnISBNChanging(string value);
     partial void OnISBNChanged();
     partial void OnPublisherChanging(string value);
     partial void OnPublisherChanged();
@@ -123,8 +127,8 @@ namespace wpfThreeView.DBTables
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Book_ID", DbType="Char(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Book_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Book_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Book_ID
 		{
 			get
 			{
@@ -139,6 +143,26 @@ namespace wpfThreeView.DBTables
 					this._Book_ID = value;
 					this.SendPropertyChanged("Book_ID");
 					this.OnBook_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Book_ID_Code", AutoSync=AutoSync.Always, DbType="VarChar(7)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string Book_ID_Code
+		{
+			get
+			{
+				return this._Book_ID_Code;
+			}
+			set
+			{
+				if ((this._Book_ID_Code != value))
+				{
+					this.OnBook_ID_CodeChanging(value);
+					this.SendPropertyChanging();
+					this._Book_ID_Code = value;
+					this.SendPropertyChanged("Book_ID_Code");
+					this.OnBook_ID_CodeChanged();
 				}
 			}
 		}
@@ -183,22 +207,22 @@ namespace wpfThreeView.DBTables
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_No_Of_Copies", DbType="Int")]
-		public System.Nullable<int> No_Of_Copies
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_No_Of_Coppies", DbType="Int")]
+		public System.Nullable<int> No_Of_Coppies
 		{
 			get
 			{
-				return this._No_Of_Copies;
+				return this._No_Of_Coppies;
 			}
 			set
 			{
-				if ((this._No_Of_Copies != value))
+				if ((this._No_Of_Coppies != value))
 				{
-					this.OnNo_Of_CopiesChanging(value);
+					this.OnNo_Of_CoppiesChanging(value);
 					this.SendPropertyChanging();
-					this._No_Of_Copies = value;
-					this.SendPropertyChanged("No_Of_Copies");
-					this.OnNo_Of_CopiesChanged();
+					this._No_Of_Coppies = value;
+					this.SendPropertyChanged("No_Of_Coppies");
+					this.OnNo_Of_CoppiesChanged();
 				}
 			}
 		}
@@ -243,8 +267,8 @@ namespace wpfThreeView.DBTables
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="Int")]
-		public System.Nullable<int> ISBN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ISBN", DbType="VarChar(13) NOT NULL", CanBeNull=false)]
+		public string ISBN
 		{
 			get
 			{

@@ -24,10 +24,10 @@ namespace wpfThreeView
         {
             InitializeComponent();
 
-           /* loginPage loginPage = new loginPage();
-            this.Content = loginPage;*/
+            /* loginPage loginPage = new loginPage();
+             this.Content = loginPage;*/
 
-           
+            mainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
         }
 
         private void GoToLoginButton_Click(object sender, RoutedEventArgs e)
