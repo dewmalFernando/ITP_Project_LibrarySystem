@@ -20,24 +20,33 @@
                 <ColumnDefinition Width="1*"/>
              </Grid.ColumnDefinitions>
 
-            
+            <Grid Grid.Column="0" 
+                  Background="#FF292929">
 
-            <TextBox Grid.Row="0" 
-                     Grid.Column="2"
-                     Name="SerachTextBox"
-                     Text="Search"
-                     HorizontalAlignment="Stretch"
-                     Height="30"
-                     Margin="10 0 10 0"
-                     KeyUp="SerachTextBox_KeyUp"/>
-
-            <Button Name="BackButton"
+                <Button Name="BackButton"
                 Content="Back" 
                     Width="50"
                     Height="30"
                     HorizontalAlignment="Left"
                     Margin="5 0 0 0"
                     Click="BackButton_Click"/>
+            </Grid>
+
+            <Grid Grid.Column="1" 
+                  Grid.Row="0"
+                  Background="#FF292929">
+                
+                <TextBox Name="SerachTextBox"
+                     Text="Search by name"
+                     HorizontalAlignment="Stretch"
+                     Height="30"
+                     Margin="10 0 10 0"
+                     KeyUp="SerachTextBox_KeyUp"/>
+            </Grid> 
+
+            
+
+            
 
             <DataGrid Grid.Row="1"
                       Name="bookDetailsManipulationDataGrid"

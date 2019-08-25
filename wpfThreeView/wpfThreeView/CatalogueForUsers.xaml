@@ -15,17 +15,10 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBox Grid.Row="0" 
-                     Name="SerachTextBox"
-                     Text="Search"
-                     TextAlignment="Center"
-                     HorizontalAlignment="Right"
-                     Width="200"
-                     Padding="0 10 0 0"
-                     Margin="0 10 15 15"
-                     KeyUp="SerachTextBox_KeyUp"/>
+            <Grid Grid.Row="0"
+                  Background="#FF292929">
 
-            <Button Name="BackButton"
+                <Button Name="BackButton"
                         Content="Back"
                         Height="30"
                         Width="100"
@@ -34,10 +27,24 @@
                         Margin="10 10 0 0"
                         Click="BackButton_Click"/>
 
-            <DataGrid Grid.Row="1"
-                      Name="catalogueDataGrid">
+                <TextBox Grid.Row="0" 
+                     Name="SerachTextBox"
+                     Text="Search by name"
+                     TextAlignment="Center"
+                     HorizontalAlignment="Right"
+                     Width="200"
+                     Padding="0 10 0 0"
+                     Margin="0 10 15 15"
+                     KeyUp="SerachTextBox_KeyUp"/>
 
-            </DataGrid>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <DataGrid Grid.Row="1"
+                      Name="catalogueDataGrid">
+                </DataGrid>
+            </Grid>
+            
         </Grid>
     </Border>
 </Page>

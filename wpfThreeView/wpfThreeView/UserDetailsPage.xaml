@@ -9,7 +9,7 @@
       Title="UserDetailsPage">
 
     <Border>
-        <Grid Background="White">
+        <Grid Background="#FF292929">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.13*"/>
                 <RowDefinition Height="*"/>
@@ -26,7 +26,7 @@
 
             <TextBox Grid.Row="0" 
                      Name="SerachMemberTextBox"
-                     Text=""
+                     Text="Search by Member ID"
                      HorizontalAlignment="Right"
                      Width="200"
                      Height="30"

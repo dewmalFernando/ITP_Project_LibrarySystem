@@ -15,7 +15,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Name="BackButton"
+
+            <Grid Grid.Row="0" 
+                  Background="#FF292929">
+
+                <Button Name="BackButton"
                         Content="Back"
                         Height="30"
                         Width="100"
@@ -23,6 +27,10 @@
                         HorizontalAlignment="Left"
                         Margin="10 10 0 0"
                         Click="BackButton_Click"/>
+                
+            </Grid>
+            
+            
 
             <DataGrid Grid.Row="1"
                       Name="checkOverdueBooksDataGrid">

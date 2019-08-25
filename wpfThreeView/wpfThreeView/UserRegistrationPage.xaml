@@ -16,7 +16,16 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Name="BackButton"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.13*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" 
+                      Grid.Column="0"
+                  Background="#FF292929">
+                    
+                    <Button Name="BackButton"
                         Content="Back"
                         Height="30"
                         Width="100"
@@ -24,24 +33,33 @@
                         HorizontalAlignment="Left"
                         Margin="10 10 0 0"
                         Click="BackButton_Click"/>
+                    
+                </Grid>
 
-                <Button Grid.Column="1" 
+                <Grid Grid.Column="1"
+                      Grid.Row="0" 
+                      Background="#FF292929">
+
+                    <Button Grid.Column="1" 
                         Name="AdminRegisterButton"
                         Content="Other registraions"
                         Height="30"
                         Width="100"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Right"
-                        Margin="0 10 10 0"
+                        Margin="0 10 10 10"
                         Click="AdminRegisterButton_Click"/>
+                    
+                </Grid>
 
-
-                <StackPanel Grid.Column="0" 
+                <Grid Grid.Column="0"
+                      Grid.Row="1">
+                    <StackPanel Grid.Column="0" 
                             HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Margin="-80 -50 0 0">
-                    
-                    <TextBlock  
+
+                        <TextBlock  
                         HorizontalAlignment="Left" 
                         Height="41" 
                         Margin="80,30,0,0" 
@@ -52,7 +70,7 @@
                         FontSize="24" 
                         Foreground="#FF2B2929"/>
 
-                    <TextBlock HorizontalAlignment="Left"
+                        <TextBlock HorizontalAlignment="Left"
                         Height="32" 
                         Margin="150,20,0,0" 
                         Text="First Name :"
@@ -60,7 +78,7 @@
                         VerticalAlignment="Top" 
                         Width="105"/>
 
-                    <TextBlock  HorizontalAlignment="Left" 
+                        <TextBlock  HorizontalAlignment="Left" 
                         Height="32" 
                         Margin="150,20,0,0" 
                         Text="Last Name :"
@@ -68,7 +86,7 @@
                         VerticalAlignment="Top" 
                         Width="107"/>
 
-                    <TextBlock  HorizontalAlignment="Left" 
+                        <TextBlock  HorizontalAlignment="Left" 
                         Height="32" 
                         Margin="150,20,0,0" 
                         Text="Age :"
@@ -76,7 +94,7 @@
                         VerticalAlignment="Top" 
                         Width="107"/>
 
-                    <TextBlock  HorizontalAlignment="Left" 
+                        <TextBlock  HorizontalAlignment="Left" 
                         Height="32" 
                         Margin="150,20,0,0" 
                         Text="Gender :"
@@ -84,30 +102,34 @@
                         VerticalAlignment="Top" 
                         Width="107"/>
 
-                    <TextBlock HorizontalAlignment="Left" 
+                        <TextBlock HorizontalAlignment="Left" 
                         Height="32" 
                         Margin="150,20,0,0" 
                         Text="User Type :"
                         TextWrapping="Wrap" 
                         VerticalAlignment="Top" 
                         Width="107"/>
-                    
-                    <TextBlock  HorizontalAlignment="Left" 
+
+                        <TextBlock  HorizontalAlignment="Left" 
                         Height="32" 
                         Margin="150,20,0,0" 
                         Text="E-Mail :" 
                         TextWrapping="Wrap" 
                         VerticalAlignment="Top" 
                         Width="105"/>
-                </StackPanel>
+                    </StackPanel>
+                </Grid>
 
-                <StackPanel Grid.Column="1" 
+                <Grid Grid.Column="1"
+                      Grid.Row="1">
+
+                    <StackPanel Grid.Column="1" 
                             HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Margin="-100 0 0 0">
-                    
-                    
-                    <TextBox  Name="FirstNameTextBox" 
+
+
+                        <TextBox  Name="FirstNameTextBox" 
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,90,0,0" 
@@ -115,7 +137,7 @@
                      VerticalAlignment="Top" 
                      Width="295" />
 
-                    <TextBox  Name="LastNameTextBox"  
+                        <TextBox  Name="LastNameTextBox"  
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,20,0,0" 
@@ -123,7 +145,7 @@
                      VerticalAlignment="Top" 
                      Width="295" />
 
-                    <TextBox  Name="AgeTextBox"  
+                        <TextBox  Name="AgeTextBox"  
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,20,0,0" 
@@ -131,39 +153,39 @@
                      VerticalAlignment="Top" 
                      Width="295" />
 
-                    <ComboBox  Name="GenderComboBox"  
+                        <ComboBox  Name="GenderComboBox"  
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,20,0,0" 
                      Text="" 
                      VerticalAlignment="Top" 
                      Width="295" >
-                        <ComboBoxItem Name="Male" 
+                            <ComboBoxItem Name="Male" 
                                       Content="M"/>
-                        <ComboBoxItem Name="Female" 
+                            <ComboBoxItem Name="Female" 
                                       Content="F"/>
-                    </ComboBox>
+                        </ComboBox>
 
-                    <ComboBox  Name="UserTypeComboBox"  
+                        <ComboBox  Name="UserTypeComboBox"  
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,20,0,0" 
                      Text="" 
                      VerticalAlignment="Top" 
                      Width="295" >
-                        <ComboBoxItem Name="TypeStudent" 
+                            <ComboBoxItem Name="TypeStudent" 
                                       Content="Student"/>
-                        <ComboBoxItem Name="TypeLecturer" 
+                            <ComboBoxItem Name="TypeLecturer" 
                                       Content="Lecturer"/>
-                        <ComboBoxItem Name="TypeProf" 
+                            <ComboBoxItem Name="TypeProf" 
                                       Content="Prof"/>
-                        <ComboBoxItem Name="TypeAdmin" 
+                            <ComboBoxItem Name="TypeAdmin" 
                                       Content="Admin"/>
-                    </ComboBox>
-                    
-                    
+                        </ComboBox>
 
-                    <TextBox  Name="MailTextBox"  
+
+
+                        <TextBox  Name="MailTextBox"  
                      HorizontalAlignment="Left" 
                      Height="32" 
                      Margin="30,20,0,0" 
@@ -171,7 +193,7 @@
                      VerticalAlignment="Top"
                      Width="295" />
 
-                    <Button  Name="RegistrationConfirmButton" 
+                        <Button  Name="RegistrationConfirmButton" 
                     Content="Confirm" 
                     HorizontalAlignment="Left" 
                     Height="34" 
@@ -180,7 +202,7 @@
                     Width="126" 
                     Click="RegistrationConfirmButton_Click"/>
 
-                    <Button  Name="RegistrationCancelButton" 
+                        <Button  Name="RegistrationCancelButton" 
                     Content="Cancel" 
                     HorizontalAlignment="Left" 
                     Height="34" 
@@ -188,7 +210,9 @@
                     VerticalAlignment="Top" 
                     Width="126" 
                     Click="RegistrationCancelButton_Click"/>
-                </StackPanel>
+                    </StackPanel>
+
+                </Grid>
             </Grid>
         </ScrollViewer>
     </Grid>

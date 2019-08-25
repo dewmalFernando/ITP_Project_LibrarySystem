@@ -23,19 +23,27 @@
                         <ColumnDefinition Width="3*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.13*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
 
-
-                    <Button Name="BackButton"
+                    <Grid Grid.Row="0"
+                          Background="#FF292929">
+                        
+                        <Button Name="BackButton"
                         Content="Back"
                         Height="30"
                         Width="100"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Left"
-                        Margin="10 30 0 0"
+                        Margin="10 10 0 10"
                         Click="BackButton_Click"/>
+                    </Grid>
+
+                    <Grid Grid.Row="0" 
+                          Grid.Column="1" 
+                          Background="#FF292929"/>
+
 
                     <StackPanel Grid.Column="0" 
                             Grid.Row="1"
