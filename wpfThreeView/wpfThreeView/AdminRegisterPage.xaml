@@ -70,7 +70,7 @@
             <Button x:Name="SaveButton" 
                             Content="Save" 
                             Foreground="White"
-                            Background="Black"
+                            Background="#FF292929"
                             Click="SaveButton_Click" 
                             FontSize="14" 
                             Width="100" 

@@ -67,18 +67,31 @@
                     <Button x:Name="LoginButton" 
                             Content="Login" 
                             Foreground="White"
-                            Background="Black"
+                            Background="#FF292929"
                             Click="LoginButton_Click" 
                             FontSize="14" 
                             Width="100" 
                             Margin="10"
                             Padding="5"/>
 
+                    <!--TextBlock Foreground="White">
+                        <Hyperlink>
+                            <Hyperlink.Style>
+                                <Style TargetType="Hyperlink">
+                                    <Setter Property="Foreground" 
+                                            Value="#FF292929"/>
+                                </Style>
+                            </Hyperlink.Style>
+                        </Hyperlink>
+                        <Hyperlink x:Name="CreateAccountLink" 
+                                   Click="CreateAccountLink_Click">Create an account</Hyperlink>
+                    </-->
+
                     <TextBlock Foreground="White">
-                        <Hyperlink Name="CreateAccountLink" 
-                                   NavigateUri="UserRegistrationPage"
+                        <Hyperlink x:Name="CreateAccountLink" 
                                    Click="CreateAccountLink_Click">Create an account</Hyperlink>
                     </TextBlock>
+
 
 
                     <!--Button Name="CreateAnAccountButton" Content="Create an account" 

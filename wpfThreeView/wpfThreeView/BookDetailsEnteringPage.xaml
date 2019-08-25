@@ -14,10 +14,10 @@
             Background="#FF0E0D0D" >
             <ScrollViewer Margin="0,-50,0,0">
 
-                <Grid>
-                    <Grid.Background>
+                <Grid Background="White">
+                    <!--Grid.Background>
                         <ImageBrush ImageSource="Images/LibImg2.jpg" TileMode="Tile"/>
-                    </Grid.Background>
+                    </-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="3*"/>
@@ -131,7 +131,7 @@
                      Height="32" 
                      Margin="30,90 100,0" 
                      Text="" 
-                     VerticalAlignment="Top" Background="#FFECFFBA" 
+                     VerticalAlignment="Top" Background="White" 
                       />
 
                         <TextBox  Name="AuthorNameTextBox"  
@@ -140,42 +140,43 @@
                      Margin="30,20,100,0" 
                      Text="" 
                      VerticalAlignment="Top" 
-                     HorizontalAlignment="Stretch" Background="#FFECFFBA" />
+                     HorizontalAlignment="Stretch" Background="White" />
 
                         <TextBox  Name="NoOfCoppiesTextBox" 
                      Height="32" 
                      Margin="30,20,100,0" 
                      Text="" 
                      VerticalAlignment="Top" 
-                              HorizontalAlignment="Stretch" Background="#FFECFFBA" />
+                              HorizontalAlignment="Stretch" 
+                                  Background="White" />
 
                         <TextBox  Name="AvilabilityTextBox"  
                      Height="32" 
                      Margin="30,20,100,0" 
                      Text="" 
                      VerticalAlignment="Top" 
-                     HorizontalAlignment="Stretch" Background="#FFECFFBA"/>
+                     HorizontalAlignment="Stretch" Background="White"/>
 
                         <TextBox  Name="RackNoTextBox"  
                      Height="32" 
                      Margin="30,20,100,0" 
                      Text="" 
                      VerticalAlignment="Top" 
-                     HorizontalAlignment="Stretch" Background="#FFECFFBA"/>
+                     HorizontalAlignment="Stretch" Background="White"/>
 
                         <TextBox  Name="IsbnTextBox" 
                      Height="32" 
                      Margin="30,20,100,0" 
                      Text="" 
                      VerticalAlignment="Top"
-                     HorizontalAlignment="Stretch" Background="#FFECFFBA" />
+                     HorizontalAlignment="Stretch" Background="White" />
 
                         <TextBox  Name="PublisherTextBox"
                      Height="32" 
                      Margin="30,20,100,0" 
                      Text="" 
                      VerticalAlignment="Top"
-                    HorizontalAlignment="Stretch" Background="#FFECFFBA" />
+                    HorizontalAlignment="Stretch" Background="White" />
 
                         <Button  Name="SaveButton" 
                     Content="Save"  
@@ -184,6 +185,7 @@
                     VerticalAlignment="Top" 
                     HorizontalAlignment="Stretch"
                     Width="200" 
+                                 Background="#FF292929"
                     Click="SaveButton_Click"/>
 
                         <Button  Name="CancelTextBox" 
@@ -193,7 +195,7 @@
                     VerticalAlignment="Top" 
                     HorizontalAlignment="Stretch"
                     Width="240" 
-                    Click="CancelTextBox_Click" Background="#FFD8D8D8"/>
+                    Click="CancelTextBox_Click" Background="#FF292929"/>
                     </StackPanel>
 
                 </Grid>

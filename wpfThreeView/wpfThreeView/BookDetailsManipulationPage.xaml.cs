@@ -24,19 +24,28 @@ namespace wpfThreeView
     /// </summary>
     public partial class BookDetailsManipulationPage : Page
     {
+        /// <summary>
+        /// SQL Connection String
+        /// </summary>
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-JJMIDS9\MSSQL;Initial Catalog=LibraryManagementSystem;Integrated Security=True");
+
+        /// <summary>
+        /// SQL Connection String( another way of doing)
+        /// </summary>
         DBBookTableDataContext dbBookTableData = new DBBookTableDataContext(Properties.Settings.Default.LibraryManagementSystemConnectionString);
 
         public BookDetailsManipulationPage()
         {
             InitializeComponent();
 
+            //Data is showing because of this
             if (dbBookTableData.DatabaseExists())
                 bookDetailsManipulationDataGrid.ItemsSource = dbBookTableData.Table_Books;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            //Save updated data
             dbBookTableData.SubmitChanges();
         }
 
@@ -72,13 +81,22 @@ namespace wpfThreeView
 
         }
 
+        /// <summary>
+        /// Navigate where admin can enter a new book
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InsetBookButton_Click(object sender, RoutedEventArgs e)
         {
             BookDetailsEnteringPage bookDetailsEnteringPage = new BookDetailsEnteringPage();
             this.NavigationService.Navigate(bookDetailsEnteringPage);
         }
         
-
+        /// <summary>
+        /// Navigate to previous page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             AdminPage adminPage = new AdminPage();
@@ -89,20 +107,29 @@ namespace wpfThreeView
         //-->      <DB_object_Name>.SubmitChanges();   <--
 
        
-
+        /// <summary>
+        /// Preform search function
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SerachTextBox_KeyUp(object sender, KeyEventArgs e)
         {
+            //Open sql connection
             sqlConnection.Open();
+            //Create a new sql command
             SqlCommand cmd = sqlConnection.CreateCommand();
+            //Define command type
             cmd.CommandType = System.Data.CommandType.Text;
+            //Sql query for select enterd data from database
             cmd.CommandText = "SELECT * FROM Book WHERE Title LIKE('" + SerachTextBox.Text + "%')";
             //cmd.CommandText = "SELECT * FROM Book WHERE Author LIKE('" + SerachTextBox.Text + "')";
+            //Execute sql command
             cmd.ExecuteNonQuery();
             DataTable dataTable = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
             sqlDataAdapter.Fill(dataTable);
             bookDetailsManipulationDataGrid.ItemsSource = dataTable.DefaultView;
-
+            //close sql connection
             sqlConnection.Close();
         }
     }

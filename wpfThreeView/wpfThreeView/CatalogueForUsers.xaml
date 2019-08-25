@@ -11,7 +11,7 @@
     <Border>
         <Grid Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="0.13*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -33,7 +33,8 @@
                      TextAlignment="Center"
                      HorizontalAlignment="Right"
                      Width="200"
-                     Padding="0 10 0 0"
+                         Height="30"  
+                     Padding="5"
                      Margin="0 10 15 15"
                      KeyUp="SerachTextBox_KeyUp"/>
 
@@ -41,7 +42,9 @@
 
             <Grid Grid.Row="1">
                 <DataGrid Grid.Row="1"
-                      Name="catalogueDataGrid">
+                      Name="catalogueDataGrid"
+                          VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch">
                 </DataGrid>
             </Grid>
             
